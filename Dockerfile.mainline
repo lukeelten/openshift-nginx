@@ -1,5 +1,5 @@
 FROM nginx:mainline
-LABEL maintainer="Tobias Derksen <lukeelten@gmail.com>"
+LABEL maintainer="Tobias Derksen <t.derksen@mailbox.org>"
 
 EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]
@@ -7,6 +7,9 @@ CMD ["nginx", "-g", "daemon off;"]
 # Work as root
 # User is overwritten by Openshift afterwards
 USER root
+
+# Install useful tools
+RUN apk add --no-cache curl bash openssl ca-certificates
 
 # Remove obsolete files
 RUN rm -f /etc/nginx/conf.d/default.conf

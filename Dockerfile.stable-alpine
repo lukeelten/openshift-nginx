@@ -8,6 +8,9 @@ CMD ["nginx", "-g", "daemon off;"]
 # User is overwritten by Openshift afterwards
 USER root
 
+# Install useful tools
+RUN apk add --no-cache curl bash openssl ca-certificates
+
 # Remove obsolete files
 RUN rm -f /etc/nginx/conf.d/default.conf
 
