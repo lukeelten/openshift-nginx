@@ -1,5 +1,5 @@
 FROM nginx:stable
-LABEL maintainer="Tobias Derksen <lukeelten@gmail.com>"
+LABEL maintainer="Tobias Derksen <t.derksen@mailbox.org>"
 
 EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]
